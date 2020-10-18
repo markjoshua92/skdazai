@@ -1,0 +1,250 @@
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+	<title>𝐃 𝐀 𝐙 𝐀 𝐈 sk</title>
+	<link href="dazai.css" rel="stylesheet" id="bootstrap-css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+<center>
+    <body style="background-image: url(images/dazaib2.gif);background-size: 100% 100%;background-attachment:fixed;background-repeat:no-repeat;" data-gr-c-s-loaded="true">
+        <body text="white" data-gr-c-s-loaded="true">
+        <div class="row col-md-12">
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<div class="card col-sm-12">
+ <h6 class="page-title-heading mr-0 mr-r-5"><strong><span style="color:#000000; text-shadow:#000000 1px 1px 20px; background-image:url(https://imgur.com/a/zq9aqLk); font-weight:bold; font-size:40px;">𝐃 𝐀 𝐙 𝐀 𝐈</span></strong></h6>
+  <div class="card-body">
+<div class="md-form">
+	<div class="col-md-11">
+        <center>
+        <font color="#000000" style="font-weight:bold"> STATUS : </font><font color="#FFFFFF"; style="font-weight:bold; text-decoration:blink; font-size:16px; class="bagde badge-pill badge-default; id="demo">WAITING FOR COMMAND!</font>
+        </center><br>
+        <span style="font-weight:bold; color:#FFFFFF;">CVV MATCHED:</span>&nbsp<span id="cLive" class="badge badge-light">0</span>&nbsp&nbsp
+        <span style="font-weight:bold; color:#FFFFFF;">CCN LIVE:</span>&nbsp<span id="cWarn" class="badge badge-light">0</span>&nbsp&nbsp
+    <span style="font-weight:bold; color:white;">DECLINED:</span>&nbsp<span id="cDie" class="badge badge-light"> 0</span>&nbsp&nbsp
+    <span style="font-weight:bold; color:white;">CHECKED:</span>&nbsp<span id="total" class="badge badge-light">0</span>&nbsp&nbsp
+    <span style="font-weight:bold; color:white;">TOTAL:</span>&nbsp<span id="carregadas" class="badge badge-light">0</span>&nbsp;<br>&nbsp;<br>
+  <textarea type="text" style="color: #000000; border-color: #000000; text-align: center;  background-color: rgba(1,1,1,0);" id="lista" class="md-textarea form-control" rows="5" placeholder="FORMAT: xxxxxxxxxxxxxxxx|mm|year|cvv"></textarea>
+  <br>
+  <h5><font color="#FFFFFF"; style="font-weight:normal; font-size:16px;">STRIPE KEY HERE:</font></h5>
+  <textarea type="text" style="color: #000000; text-align: center; border-color: #000000; background-color: rgba(1,1,1,0);" id="sec" class="md-textarea form-control" rows="1" placeholder="sk_live_XXxxxxxxxXxxXxX"></textarea>
+</div>
+</div>
+<br>
+<center>
+ <button class="btn btn-outline-dark" style="width: 300px; outline: none; font-weight:bold;" id="testar" onclick="enviar();" ><span style="color:#000000; text-shadow:#000000 1px 1px 20px; background-image:url(https://imgur.com/a/zq9aqLk); font-weight:bold; font-size:16px;">S T A R T</span></button>
+  <!--<button class="btn btn-outline-dark" style="width: 300px; outline: none; font-weight:bold;" id="parar" onclick="stop();">STOP</button> -->
+</center>
+</div>
+
+
+</div>
+</div>
+</div>
+
+</center>
+<br>
+<div class="col-md-12">
+<div class="card">
+<div style="position: absolute;
+        top: 0;
+        right: 41;">
+	<button id="mostra" class="btn btn-outline-dark">SHOW/HIDE</button>
+</div>
+  <div class="card-body" style="background-color: rgba(1,1,1,0);">
+<h6 style="font-weight: bold; color:#FFFFFF;" class="card-title">&nbsp&nbsp&nbsp&nbsp&nbsp CVV MATCHED: <span  id="cLive2" class="badge badge-light">0</span></h6>
+   <center> <div id="bode"><span id=".aprovadas" class="aprovadas"></span></center>
+</div>
+  </div>
+</div>
+</div>
+
+
+<div class="col-md-12">
+<div class="card">
+<div style="position: absolute;
+        top: 0;
+        right: 41;">
+    <button id="mostra3" class="btn btn-outline-dark">SHOW/HIDE</button>
+</div>
+  <div class="card-body" style="background-color: rgba(1,1,1,0);">
+   <h6 style="font-weight: bold; color:#FFFFFF;" class="card-title">&nbsp&nbsp&nbsp&nbsp&nbsp CCN LIVE: <span  id="cWarn2" class="badge badge-light">0</span></h6>
+    <center><div id="bode3"><span id=".edrovadas" class="edrovadas"></span></center>
+</div>
+  </div>
+</div>
+</div>
+<div class="col-md-12">
+<div class="card">
+	<div style="position: absolute;
+        top: 0;
+        right: 41;">
+	<button id="mostra2" class="btn btn-outline-dark">SHOW/HIDE</button>
+</div>
+  <div class="card-body">
+    <h6 style="font-weight: bold; color:light;" class="card-title">&nbsp&nbsp&nbsp&nbsp&nbsp DECLINED : <span id="cDie2" class="badge badge-light">0</span></h6>
+    <center><div id="bode2"><span id=".reprovadas" class="reprovadas"></span></center>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</div>
+<br>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+
+    $("#bode").hide();
+	$("#esconde").show();
+	
+	$('#mostra').click(function(){
+	$("#bode").slideToggle();
+	});
+
+});
+
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+
+    $("#bode3").hide();
+    $("#esconde3").show();
+    
+    $('#mostra3').click(function(){
+    $("#bode3").slideToggle();
+    });
+
+});
+
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+
+    $("#bode2").hide();
+	$("#esconde2").show();
+	
+	$('#mostra2').click(function(){
+	$("#bode2").slideToggle();
+	});
+
+});
+
+</script>
+
+<script title="ajax do checker">
+    function enviar() {
+        var lista = $('#lista').val();
+        var sec = $('#sec').val();
+          if (lista.length == 0) {
+              document.getElementById("demo").innerHTML = 'INPUT YOUR CARDS!';
+              return;
+          }
+          if (sec.length == 0) {
+              document.getElementById("demo").innerHTML = 'INPUT YOUR SK LIVE!';
+              return;
+          } else {
+              document.getElementById("demo").innerHTML = 'STARTING..';
+          }
+        var str = "STARTING..";
+        var result = str.fontcolor("#FFFFFF");
+        document.getElementById("demo").innerHTML = result;
+        var linha = $("#lista").val();
+        var linhaenviar = linha.split("\n");
+        var total = linhaenviar.length;
+        var ap = 0;
+        var ed = 0;
+        var rp = 0;
+        var audio2 = new Audio('audio/bot.mp3');
+        linhaenviar.forEach(function(value, index) {
+            setTimeout(
+                function() {
+                    var sec = $("#sec").val();
+                    $.ajax({
+                        url: 'api.php?check=' + value + '&sec=' + sec,
+                        type: 'GET',
+                        async: true,
+                        success: function(resultado) {
+                            if (resultado.match("Approved CVV")) {
+                                var str = "CVV MATCHED FOUND!";
+                                var result = str.fontcolor("#21BDDF");
+                                document.getElementById("demo").innerHTML = result;
+                                removelinha();                               
+                                ap++;                                
+                                aprovadas(resultado + "");
+                                audio2.play();
+                               // stop();                               
+                            }else if(resultado.match("#Approved")){
+                                var str = "LIVE CCN FOUND!";
+                                var result = str.fontcolor("#21DF78");
+                                document.getElementById("demo").innerHTML = result;
+                                removelinha();
+                                ed++;
+                                edrovadas(resultado + "");
+                            }else if(resultado.match("#Declined")){
+                                var str = "CARD DECLINED!";
+                                var result = str.fontcolor("red");
+                                document.getElementById("demo").innerHTML = result;
+                                removelinha();
+                                rp++;
+                                reprovadas(resultado + "");
+                            }else {
+                                var str = "ERROR!";
+                                var result = str.fontcolor("red");
+                                document.getElementById("demo").innerHTML = result;
+                                removelinha();
+                                rp++;
+                                reprovadas(resultado + "");
+                            }
+                            $('#carregadas').html(total);
+                            var fila = parseInt(ap) + parseInt(ed) + parseInt(rp);
+                            $('#cLive').html(ap);
+                            $('#cWarn').html(ed);
+                            $('#cDie').html(rp);
+                            $('#total').html(fila);
+                            $('#cLive2').html(ap);
+                            $('#cWarn2').html(ed);
+                            $('#cDie2').html(rp);
+                        }
+                    });
+                }, 500 * index);
+        });
+    }
+    function aprovadas(str) {
+        $(".aprovadas").append(str + "");
+    }
+    function reprovadas(str) {
+        $(".reprovadas").append(str + "");
+    }
+    function edrovadas(str) {
+        $(".edrovadas").append(str + "");
+    }
+    function removelinha() {
+        var lines = $("#lista").val().split('\n');
+        lines.splice(0, 1);
+        $("#lista").val(lines.join("\n"));
+    }
+</script>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
+</body>
+
+</html>
